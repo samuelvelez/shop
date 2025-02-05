@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Products } from './components/Products';
 import { Recents } from './components/Recents';
@@ -27,12 +25,12 @@ function App() {
           </div> */}
           <div className='md:flex flex-row'>
             <div className='w-full block justify-center items-center  md:w-3/4 overflow-auto'>
-              <h3 className='text-left text-2xl ml-5 font-mono w-96'>Productos Populares</h3>
+              <h3 className='text-left text-2xl ml-5 font-mono w-96'>Todos los productos</h3>
               <Products />
             </div>
 
             <div className='w-full block md:w-1/4'>
-              <h3 className='text-left text-2xl ml-5 font-mono w-96'>Ultimos Agregados</h3>
+              <h3 className='text-left text-2xl ml-5 font-mono w-96'>Productos Populares</h3>
               <Recents />
             </div>
           </div>

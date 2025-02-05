@@ -3,10 +3,10 @@ export interface Producto {
     Subcategoria: string;
     Nombre: string;
     Marca: string;
-    Precio: number;
+    Precio: string;
     Disponibilidad: string;
     Parte: string;
-    Sku: string;
+    SKU: string;
     Atributos: string;
-    Imagen: string;
+    Imagen?: string;
 }
