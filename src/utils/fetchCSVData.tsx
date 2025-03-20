@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'; // Import Axios
 
-export default function FetchCSVData() {
-    const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTD0JfNkXsja01E3rTdtVwxwbvDHy7ZButbEGubdbmaQzdB08-FAx11LbqBl6FksEh6w5RNVX8jsdqE/pub?gid=0&single=true&output=csv'
+export default function FetchCSVData(url: string) {
+    //const url = 
     const [csvData, setCsvData] = useState([]);
 
     useEffect(() => {

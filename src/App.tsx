@@ -24,9 +24,16 @@ function App() {
             <img src='https://placehold.co/900x200' className='rounded-md' />
           </div> */}
           <div className='md:flex flex-row'>
-            <div className='w-full block justify-center items-center  md:w-3/4 overflow-auto'>
-              <h3 className='text-left text-2xl ml-5 font-mono w-96'>Todos los productos</h3>
-              <Products />
+            <div className='w-full block column'>
+              <div className='w-full block justify-center items-center  md:w-3/4 overflow-auto'>
+                <h3 className='text-left text-2xl ml-5 font-mono w-96'>Productos disponibles</h3>
+                {/* https://docs.google.com/spreadsheets/d/e/2PACX-1vTD0JfNkXsja01E3rTdtVwxwbvDHy7ZButbEGubdbmaQzdB08-FAx11LbqBl6FksEh6w5RNVX8jsdqE/pub?gid=0&single=true&output=csv */}
+                <Products url={'https://docs.google.com/spreadsheets/d/e/2PACX-1vTD0JfNkXsja01E3rTdtVwxwbvDHy7ZButbEGubdbmaQzdB08-FAx11LbqBl6FksEh6w5RNVX8jsdqE/pub?gid=0&single=true&output=csv'} />
+              </div>
+              <div className='w-full block justify-center items-center  md:w-3/4 overflow-auto'>
+                <h3 className='text-left text-2xl ml-5 font-mono w-96'>Todos los productos</h3>
+                <Products url={'https://docs.google.com/spreadsheets/d/e/2PACX-1vTD0JfNkXsja01E3rTdtVwxwbvDHy7ZButbEGubdbmaQzdB08-FAx11LbqBl6FksEh6w5RNVX8jsdqE/pub?gid=1772862691&single=true&output=csv'} />
+              </div>
             </div>
 
             <div className='w-full block md:w-1/4'>
