@@ -1,8 +1,13 @@
+import { useState } from 'react';
 import './App.css';
 import { Products } from './components/Products';
 import { Recents } from './components/Recents';
 
 function App() {
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const changeCategory = (category: string) => {
+    setSelectedCategory(category);
+  }
   return (
     <div className="App  h-screen">
       <header className='bg-purple-200 shadow-[0_15px_10px_-15px_rgba(0,0,0,0.3)]'>
@@ -24,15 +29,28 @@ function App() {
             <img src='https://placehold.co/900x200' className='rounded-md' />
           </div> */}
           <div className='md:flex flex-row'>
+            <div className='w-full md:w-3/4 flex flex-col md:flex-row justify-between'>
+
+              <ul className='flex flex-row gap-5 justify-center items-center md:me-5 overflow-auto'>
+                <a href='#' onClick={() => changeCategory('')}><li className='bg-purple-200 px-3 py-1 rounded-full hover:scale-105 cursor-pointer'>Todos</li></a>
+                <a href='#' onClick={() => changeCategory('UPS')}><li className='bg-purple-200 px-3 py-1 rounded-full hover:scale-105 cursor-pointer'>UPS</li></a>
+                <li className='bg-purple-200 px-3 py-1 rounded-full hover:scale-105 cursor-pointer'>Electrónica</li>
+                <li className='bg-purple-200 px-3 py-1 rounded-full hover:scale-105 cursor-pointer'>Hogar</li>
+                <li className='bg-purple-200 px-3 py-1 rounded-full hover:scale-105 cursor-pointer'>Juguetes</li>
+                <li className='bg-purple-200 px-3 py-1 rounded-full hover:scale-105 cursor-pointer'>Salud</li>
+              </ul>
+            </div>
+          </div>
+          <div className='md:flex flex-row mt-5 gap-5'>
             <div className='w-full block column'>
               <div className='w-full block justify-center items-center  md:w-3/4 overflow-auto'>
                 <h3 className='text-left text-2xl ml-5 font-mono w-96'>Productos disponibles</h3>
                 {/* https://docs.google.com/spreadsheets/d/e/2PACX-1vTD0JfNkXsja01E3rTdtVwxwbvDHy7ZButbEGubdbmaQzdB08-FAx11LbqBl6FksEh6w5RNVX8jsdqE/pub?gid=0&single=true&output=csv */}
-                <Products url={'https://docs.google.com/spreadsheets/d/e/2PACX-1vTD0JfNkXsja01E3rTdtVwxwbvDHy7ZButbEGubdbmaQzdB08-FAx11LbqBl6FksEh6w5RNVX8jsdqE/pub?gid=0&single=true&output=csv'} />
+                <Products url={'https://docs.google.com/spreadsheets/d/e/2PACX-1vTD0JfNkXsja01E3rTdtVwxwbvDHy7ZButbEGubdbmaQzdB08-FAx11LbqBl6FksEh6w5RNVX8jsdqE/pub?gid=0&single=true&output=csv'} category={selectedCategory} />
               </div>
               <div className='w-full block justify-center items-center  md:w-3/4 overflow-auto'>
                 <h3 className='text-left text-2xl ml-5 font-mono w-96'>Todos los productos</h3>
-                <Products url={'https://docs.google.com/spreadsheets/d/e/2PACX-1vTD0JfNkXsja01E3rTdtVwxwbvDHy7ZButbEGubdbmaQzdB08-FAx11LbqBl6FksEh6w5RNVX8jsdqE/pub?gid=1772862691&single=true&output=csv'} />
+                <Products url={'https://docs.google.com/spreadsheets/d/e/2PACX-1vTD0JfNkXsja01E3rTdtVwxwbvDHy7ZButbEGubdbmaQzdB08-FAx11LbqBl6FksEh6w5RNVX8jsdqE/pub?gid=1772862691&single=true&output=csv'} category={selectedCategory} />
               </div>
             </div>
 
